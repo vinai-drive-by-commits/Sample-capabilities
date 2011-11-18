@@ -1,0 +1,2 @@
+module FabricHelper
+end

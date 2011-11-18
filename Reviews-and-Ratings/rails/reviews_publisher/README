@@ -1,0 +1,27 @@
+== Reviews Publisher Capability in Rails 3.1
+
+This is a sample capability for subscribing to a reviews and ratings system. This capability can be fully expanded and customized.
+The intention for this capability is to serve as a reviews publisher who can provide reviews for marketplace products based on catalog information.
+This ideally, would be hooked on to any marketplace like eBay, Amazon, Shopify, Google, etc that provides a facility to gather product reviews.
+
+
+
+== Overview
+Writing a basic capability in rails hardly 30 minutes. This document will give you an overview of what to do from the Rails side of things. 
+This document will not over how to create a capability in X.manager and subscribe to the topics. The way this capability has been written,
+1. The fabric is running on localhost:8080
+
+2. The capability has an end point localhost:3000 or whatever port the rails server is running on
+
+3. The capability subscribes to the topic in the Avro file, that is included in the home directory. (/product/reviews/find,/product/reviews/search,/product/reviews/udpate)
+
+
+== Rails specific stuff
+1. Use the AVRO gem from the X.commerce git repo. Add this line in your gemfile.
+gem 'avro', :git => 'git://github.com/xcommerce/avro-ruby.git'
+
+2. Make sure you capture all the routes for the subscribed topics and route it to the proper controller action
+
+3. In addition to this, you need to create general routes like /xfabric/tenant/updated, /message/failed that originate from the Fabric based on its inherent protocols.
+
+4. Check the schema out in config/schema.rb. This is the AVRO schema. You can modify it to suit your needs.
