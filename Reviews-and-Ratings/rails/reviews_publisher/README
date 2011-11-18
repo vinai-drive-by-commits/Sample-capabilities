@@ -24,4 +24,4 @@ gem 'avro', :git => 'git://github.com/xcommerce/avro-ruby.git'
 
 3. In addition to this, you need to create general routes like /xfabric/tenant/updated, /message/failed that originate from the Fabric based on its inherent protocols.
 
-4. Check the schema out in config/schema.rb. This is the AVRO schema. You can modify it to suit your needs.
+4. Check the schema out in config/initializers/schema.rb. This is the AVRO schema. You can modify it to suit your needs.
