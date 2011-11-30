@@ -1,0 +1,9 @@
+<?php
+/* @var $this Example_Brand_Block_List */
+/* @var $brand Example_Brand_Model_Brand */
+?>
+<?php foreach ($this->getBrands() as $brand): ?>
+	<div class="brand-container">
+		<a href="<?php echo $brand->getCategoryUrl() ?>"><img src="<?php echo $brand->getImageUrl() ?>" title="<?php echo $this->escapeUrl($brand->getName()) . ' (' . $brand->getCategoryProductCount() . ')' ?>" width="134" height="56"/></a>
+	</div>
+<?php endforeach; ?>

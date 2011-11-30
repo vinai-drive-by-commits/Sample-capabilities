@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Example_MultiOptionCart>
+			<active>true</active>
+			<codePool>local</codePool>
+			<depends>
+				<Mage_Core/>
+				<Mage_Checkout/>
+				<Mage_Catalog/>
+			</depends>
+		</Example_MultiOptionCart>
+	</modules>
+</config>

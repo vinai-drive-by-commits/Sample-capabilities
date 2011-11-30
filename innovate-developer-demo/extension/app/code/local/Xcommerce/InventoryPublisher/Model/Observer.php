@@ -32,7 +32,7 @@ class Xcommerce_InventoryPublisher_Model_Observer {
     $ch = curl_init();
 
     // The URL is the host:port for the XFabric, plus the topic
-    curl_setopt($ch, CURLOPT_URL, "https://localhost:8080/inventory/updated");
+    curl_setopt($ch, CURLOPT_URL, "http://10.0.2.2:8080/inventory/updated");
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_HEADER, true);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

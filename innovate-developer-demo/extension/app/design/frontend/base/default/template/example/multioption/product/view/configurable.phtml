@@ -1,0 +1,41 @@
+<?php
+/* @var $this Mage_Catalog_Block_Product_View_Type_Configurable */
+?>
+<input type="hidden" name="id" value="<?php echo $this->getProduct()->getId() ?>"/>
+<table id="multioption">
+	<thead>
+		<tr>
+			<?php foreach ($this->getAllowAttributes() as $_attribute): ?>
+				<?php /* @var $_attribute Mage_Catalog_Model_Product_Type_Configurable_Attribute */ ?>
+				<th><?php echo $this->escapeHtml($_attribute->getLabel()) ?></th>
+			<?php endforeach; ?>
+			<th><?php echo $this->__('Qty') ?></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php $_rows = Mage::helper('example_multioption')->getSortedAttributeOptions($this->getAllowProducts(), $this->getAllowAttributes()); ?>
+		<?php foreach ($_rows as $_idx =>  $_row): ?>
+		<tr>
+			<?php foreach ($_row['options'] as $_attrId => $_info): ?>
+			<td>
+			<?php if (!is_array($_info['value'])): ?>
+				<?php echo $this->escapeHtml($_info['label']) ?>
+				<input type="hidden" name="multioption[<?php echo $_idx ?>][super_attribute][<?php echo $_attrId ?>]" value="<?php echo $this->escapeHtml($_info['value']) ?>"/>
+			<?php else: ?>
+				<?php echo Mage::helper('example_multioption')->getOptionSelectHtml(sprintf('multioption[%d][super_attribute][%d]', $_idx, $_attrId), $_info['value']) ?>
+			<?php endif; ?>
+			</td>
+			<?php endforeach; ?>
+			<td>
+				<input type="text" name="multioption[<?php echo $_idx ?>][qty]" value="" size="3"/>
+			</td>
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
+<div class="multioption-add-to-cart">
+	<?php $_buttonTitle = $this->__('Add to Cart'); ?>
+	<button type="button" title="<?php echo $_buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $_buttonTitle ?></span></span></button>
+</div>
+
+
