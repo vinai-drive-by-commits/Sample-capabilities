@@ -22,7 +22,6 @@ protocol Reviews {
 		string value;
 	}
 	
-	/*Reviews and ratings */
 	record IndividualReview {
 		string review;
 		string by;
@@ -44,15 +43,6 @@ protocol Reviews {
 		ReviewCollection reviews;	
 	}
 	
-	/************************************
-	* TOPICS/MESSAGES 
-	*************************************/
-	//-----------------------------------------------------------------------------------------------------
-	// Request & Response: Product Reviews
-	//
-	// 	- GetProductReviewsMessage : Request product review by productID and type.
-	// 	- ProductReviewsMessage : Return a collection of product reviews.
-	//-----------------------------------------------------------------------------------------------------
 	
 	@topic("/product/reviews/find")
 	record GetProductReviewsMessage {
