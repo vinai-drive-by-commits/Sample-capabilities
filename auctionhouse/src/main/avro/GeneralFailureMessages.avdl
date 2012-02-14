@@ -1,0 +1,79 @@
+// Each message contains 2 annotations:
+
+// @topic to specify the message's topic name
+
+// @direction to indicate if the message is passed in or out of XManager
+
+ 
+
+@namespace("com.x.error")
+
+protocol GeneralFailureMessages {
+
+        // Error Ids:
+
+        // 100-199 Range: Did not attempt to deliver message (no httpStatus)
+
+        // - 100: No Recipients - No capabilities are subscribed to topic
+
+        // - 101: Recipient Not Enabled - The Recipient's endpoint url has not
+
+        //        been specified
+
+ 
+
+        // 200-299 Range: Connection error during delivery (no httpStatus)
+
+        // - 200: General delivery exception - Delivery failed for reasons other
+
+        //        than one of the other reasons in this range
+
+        // - 201: Connection refused
+
+        // - 202: Connection timed out
+
+        // - 203: Message timeout - Message timed out during read or write
+
+ 
+
+        // 300-399 Range: Message delivery rejected by receiver (httpStatus provided)
+
+        // - 300: Message Rejected - httpStatus contains status code, and errorCause
+
+        //        contains the status line.
+
+ 
+
+        // 400-499 Range: Message delivered but failed in process (no httpStatus)
+
+        // Messages TBD
+
+ 
+
+ 
+
+        // Note to app developers, do not respond to a /message/failed message
+
+        // with another /message/failed message.
+
+        @topic("/message/failed")
+
+        @direction("out")
+
+        record MessageDeliveryFailed {
+
+                string topicName;            // topic of the problem message
+
+                int errorId;                 // Error id, as described above
+
+                union{int,null} httpStatus;  // Http Status if available or null if another type of error
+
+                string errorCause;           // Http Status line message or cause of delivery failure
+
+                string messageGuid;          // GUID, as above
+
+                bytes message;               // Original message body
+
+        }
+
+}

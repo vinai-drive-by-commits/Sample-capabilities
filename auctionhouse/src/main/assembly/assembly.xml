@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+	<id>bundle</id>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<formats>
+		<format>jar</format>
+	</formats>
+	<dependencySets>
+	  <dependencySet>
+	    <outputDirectory>/</outputDirectory>
+	    <useProjectArtifact>true</useProjectArtifact>
+	    <unpack>true</unpack>
+	    <scope>runtime</scope>
+	  </dependencySet>
+	</dependencySets>
+</assembly>
