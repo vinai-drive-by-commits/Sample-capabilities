@@ -1,0 +1,37 @@
+participant Publisher
+participant Listener
+participant XFabric
+participant XManager
+participant human
+human -> XManager: register Publisher
+human -> XManager: authorize Publisher for merchant2
+note right of XManager
+  If an endpoint was registered for Publisher, XManager
+  would send the token for merchant2 directly.
+end note
+XManager -> human: token (manual)
+Publisher -> XFabric: message + token
+note right of XFabric
+  Endpoint: http://host:port/<topic>
+end note
+XFabric -> XManager: check token
+XManager -> XFabric: ok
+XFabric -> Publisher: HTTP 200 OK
+XFabric -> XFabric: no subscribers!
+XFabric -> Publisher: delivery failure
+human -> XManager: register Listener, set endpoint
+human -> XManager: authorize Listener for merchant2
+XManager -> Listener: token (ignored - no route)
+XManager -> human: token (manual)
+Publisher -> XFabric: message + token
+note right of XFabric
+  Endpoint: http://host:port/<topic>
+end note
+XFabric -> XManager: check token
+XManager -> XFabric: ok
+XFabric -> Publisher: HTTP 200 OK
+XFabric -> Listener: message
+note right of Listener
+  Endpoint: http://host:port/<topic>
+end note
+

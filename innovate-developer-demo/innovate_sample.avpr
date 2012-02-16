@@ -1,0 +1,37 @@
+{
+  "protocol" : "Inventory",
+  "namespace" : "com.x.product.inventory",
+  "types" : [ {
+    "type" : "record",
+    "name" : "Item",
+    "fields" : [ {
+      "name" : "sku",
+      "type" : "string"
+    }, {
+      "name" : "title",
+      "type" : "string"
+    }, {
+      "name" : "currentPrice",
+      "type" : "string"
+    }, {
+      "name" : "url",
+      "type" : "string"
+    }, {
+      "name" : "dealOfTheDay",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "Items",
+    "fields" : [ {
+      "name" : "items",
+      "type" : {
+        "type" : "array",
+        "items" : "Item"
+      }
+    } ],
+    "version" : "1.0.0"
+  } ],
+  "messages" : {
+  }
+}
