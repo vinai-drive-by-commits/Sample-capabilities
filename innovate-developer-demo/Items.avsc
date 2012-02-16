@@ -1,0 +1,1 @@
+{"type":"record","name":"Items", "version":"1.0.0","namespace":"com.x.product.inventory","fields":[{"name":"items","type":{"type":"array","items":{"type":"record","name":"Item", "version":"","fields":[{"name":"sku","type":"string"},{"name":"title","type":"string"},{"name":"currentPrice","type":"string"},{"name":"url","type":"string"},{"name":"dealOfTheDay","type":"string"}]}}}]}
