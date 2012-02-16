@@ -1,0 +1,16 @@
+@namespace("com.x.product.inventory")
+protocol Inventory {
+  record Item {
+    string sku;
+    string title;
+    string currentPrice;
+    string url;
+    string dealOfTheDay;
+  }
+
+  @version("1.0.0")
+  record Items {
+    array<Item> items;
+  }
+}
+
