@@ -13,6 +13,9 @@ a. Written in PHP. Utilizes the message contract from https://github.com/xcommer
 2. Auctionhouse Bidder
 a. This example is written in Java and was part of the Innovate 2011 workshop and illustrates an auctionhouse. The XFabric message flow is illustrated using bidding messages for any particular item.
 
+3. Innovate developer demo
+a. This was presented as the "[From code to capability session](http://www.youtube.com/watch?feature=player_profilepage&v=8fZPtLvApvI)" at Innovate 2011. It's a  combination of a Magento extension that listens to inventory updates and publishes them to the Fabric, plus a Ruby on Rails application that receives the updates and posts to a user's Facebook wall with a "deal of the day".
+
 
 Contributing
 ------------
