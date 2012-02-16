@@ -22,8 +22,6 @@ Contributing
 ------------
 
 1. Fork it.
-2. Create a branch (`git checkout -b my_changes`). 
-3. Add your capability. Commit your changes (`git commit -am "Added Awesomeness"`)
-4. Push to the branch (`git push origin my_changes`)
-5. Create an [Issue][1] with a link to your branch
-6. Enjoy a nice cup of coffee
+2. Add your capability. Commit your changes (`git commit -am "Added Awesomeness$
+3. Submit a pull request                            
+4. Create an [Issue][1] with a link to your branch
