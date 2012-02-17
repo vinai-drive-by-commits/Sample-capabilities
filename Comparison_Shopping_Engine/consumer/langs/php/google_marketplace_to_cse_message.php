@@ -66,7 +66,7 @@ function convertGoogleDataToCSEMessage($items)
 //$content = file_get_contents("https://ocl.xcommercecloud.com/marketplace/profile/delete/1.0.0");
 //this content should be parsed from a hosted url. 
 $content = file_get_contents("http://localhost/fabric_post/contracts/cse.avpr");
-$testGoogleAPIKey = "AIzaSyAwEqH8vZZ_WI45Eo9RjCzdvLrMZMNzMj8";
+$testGoogleAPIKey = "YOUR KEY HERE";
 
 if ($content !== false) {
 	echo "Successfully parsed schema!\n";	
