@@ -1,4 +1,3 @@
-
 Comparison shopping engine
 =============
 
@@ -24,4 +23,4 @@ Contributing
 1. Fork it.
 2. Add your capability. Commit your changes (`git commit -am "Added Awesomeness$
 3. Submit a pull request                            
-4. Create an [Issue][1] with a link to your branch
+
