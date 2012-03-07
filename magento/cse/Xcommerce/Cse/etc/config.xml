@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Xcommerce_Cse>
+			<version>0.1.0</version>
+		</Xcommerce_Cse>
+	</modules>
+
+	<global>
+		<models>
+			<Xcommerce_Cse>
+				<class>Xcommerce_Cse_Model</class>
+			</Xcommerce_Cse>
+
+		</models>
+
+		<blocks>
+			<cse>
+				<class>Xcommerce_Cse_Block</class>
+			</cse>
+		</blocks> 
+		
+		<helpers>
+		    <cse><class>Xcommerce_Cse_Helper</class></cse>
+		</helpers>
+
+	</global>
+
+	<adminhtml>
+		<menu>
+			<cse translate="title" module="cse">
+				<title>Xcommerce</title>
+				<sort_order>100</sort_order>
+
+				<children>
+					<newchildmenu translate="title">
+						<title>Send store data to CSE</title>
+						<action>cse/admin</action>
+					</newchildmenu>
+				</children>
+			</cse>
+		</menu>
+	</adminhtml>
+
+	<frontend>
+		<routers>
+			<Xcommerce_Cse>
+				<use>standard</use>
+				<args>
+					<module>Xcommerce_Cse</module>
+					<frontName>cse</frontName>
+				</args>
+			</Xcommerce_Cse>
+		</routers>
+	</frontend>
+
+</config> 
