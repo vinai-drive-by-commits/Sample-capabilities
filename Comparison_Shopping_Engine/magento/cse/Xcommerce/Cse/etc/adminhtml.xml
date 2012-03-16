@@ -24,7 +24,7 @@
 			<children>
 				<cse translate="title" module="cse">
 					<title>Send store data to CSE</title>
-					<action>cse/admin</action>
+					<action>adminhtml/cse</action>
 				</cse>
 			</children>
 		</xcommerce>

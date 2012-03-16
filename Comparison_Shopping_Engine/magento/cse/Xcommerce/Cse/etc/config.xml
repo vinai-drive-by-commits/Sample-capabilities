@@ -22,6 +22,18 @@
 
 	</global>
 
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<Xcommerce_Cse before="Mage_Adminhtml">Xcommerce_Cse_Adminhtml</Xcommerce_Cse>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+
 	<frontend>
 		<routers>
 			<Xcommerce_Cse>
