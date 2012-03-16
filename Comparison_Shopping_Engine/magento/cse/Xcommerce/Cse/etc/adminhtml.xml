@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<menu>
+		<xcommerce translate="title" module="cse">
+			<title>Xcommerce</title>
+			<sort_order>100</sort_order>
+
+			<children>
+				<cse translate="title" module="cse">
+					<title>Send store data to CSE</title>
+					<action>cse/admin</action>
+				</cse>
+			</children>
+		</xcommerce>
+	</menu>
+</config>

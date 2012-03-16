@@ -15,26 +15,12 @@
 		</blocks> 
 		
 		<helpers>
-		    <cse><class>Xcommerce_Cse_Helper</class></cse>
+		    <cse>
+				<class>Xcommerce_Cse_Helper</class>
+			</cse>
 		</helpers>
 
 	</global>
-
-	<adminhtml>
-		<menu>
-			<cse translate="title" module="cse">
-				<title>Xcommerce</title>
-				<sort_order>100</sort_order>
-
-				<children>
-					<newchildmenu translate="title">
-						<title>Send store data to CSE</title>
-						<action>cse/admin</action>
-					</newchildmenu>
-				</children>
-			</cse>
-		</menu>
-	</adminhtml>
 
 	<frontend>
 		<routers>
