@@ -7,12 +7,6 @@
 	</modules>
 
 	<global>
-		<models>
-			<Xcommerce_Cse>
-				<class>Xcommerce_Cse_Model</class>
-			</Xcommerce_Cse>
-
-		</models>
 
 		<blocks>
 			<cse>
